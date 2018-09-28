@@ -61,6 +61,7 @@
     "lodash": "^4.17.10",
     "normalize-scss": "^7.0.1",
     "pixelmatch": "^4.0.2",
-    "regenerator-runtime": "^0.11.1"
+    "regenerator-runtime": "^0.11.1",
+    "uikit": "^3.0.0-rc.17"
   }
 }

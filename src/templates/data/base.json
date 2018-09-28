@@ -2,19 +2,19 @@
   "cards": [
     {
       "title": "Title 1",
-      "desc": "desc 1"
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, quo? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, quo?"
     },
     {
       "title": "Title 2",
-      "desc": "desc 2"
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, quo?"
     },
     {
       "title": "Title 3",
-      "desc": "desc 3"
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, quo?"
     },
     {
       "title": "Title 4",
-      "desc": "desc 4"
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, quo?"
     }
   ]
 }

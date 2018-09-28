@@ -1,0 +1,9 @@
+mixin accordion(data)
+  ul(uk-accordion)
+    each item in data
+      li
+        - if (typeof(item.title) === 'undefined') item.title = 'Title of link'
+        a.uk-accordion-title=item.title
+        .uk-accordion-content
+          - if (typeof(item.desc) === 'undefined') item.desc = 'Title of link'
+          p=item.desc

@@ -4,39 +4,27 @@ block vars
   - bodyClass = 'hello-world'
 
 block content
-  h1 Woah.
-  p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, quo?
-  .container
-    .row
-      .col-2
-        span Hello world
-        a.foo_link(href='about.html', target='_blank') About Us
-        input(
-          type='checkbox'
-          name='agreement'
-          checked
-        )
-        span(data-json='hello-world')
-        a(style={color: 'red', background: 'green'}) Inline style
-        ul.bullet-list
-          each val in [1, 2, 3, 4, 5]
-            li
-              a(href='#')=val
+  .uk-container
 
-        ul
-          each val, index in ['zero', 'one', 'two']
-            li
-              a(href='#')=index + ': ' + val
+    h1 Woah.
+    p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, quo?
+    h2 Accordion
+    +accordion(base.cards)
 
-        +link('this is title', '#', 'This is a link')
-        - var msg = "not my inside voice";
-        p This is #{msg.toUpperCase()}
-        each card in base.cards
-          .cards
-            h4=card.title
-            span=card.desc
+    h2 Cards
+    span.uk-margin-small-right(uk-icon='check')
 
-        each data in test.tests
-          .cards
-            h4=data.title
 
+    .uk-grid-match(class='uk-child-width-1-2@s', uk-grid)
+      each card in base.cards
+        div
+          .uk-card.uk-card-default.uk-card-hover.uk-card-body
+            h3.uk-card-title=card.title
+            p=card.desc
+
+    a(style={color: 'red', background: 'green'}) Inline style
+
+    +link('this is title', '#', 'This is a link')
+
+    - var msg = "not my inside voice";
+    p This is #{msg.toUpperCase()}

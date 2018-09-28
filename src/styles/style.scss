@@ -1,22 +1,7 @@
-@import 'normalize-scss';
-@import './global/variable.scss';
+// @import "uikit/src/scss/variables.scss";
+// @import "uikit/src/scss/mixins.scss";
+// @import "uikit/src/scss/uikit.scss";
 
-@font-face {
-  font-family: 'MyFont';
-  src: url('../fonts/kinetic/HussarBoldWeb.otf') format('otf'),
-    url('../fonts/kinetic/HussarBoldWeb.woff') format('woff');
-
-  font-weight: 600;
-  font-style: normal;
-}
-
-.hello {
-  color: red;
-  font-family: 'MyFont';
-  background: url('../images/bg.jpeg');
-}
-
-body {
-  padding: 0;
-  margin: 0;
-}
+@import "uikit/src/scss/variables-theme.scss";
+@import "uikit/src/scss/mixins-theme.scss";
+@import "uikit/src/scss/uikit-theme.scss";

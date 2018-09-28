@@ -7200,6 +7200,10 @@ uglifyjs-webpack-plugin@^1.2.4, uglifyjs-webpack-plugin@^1.2.5:
     webpack-sources "^1.1.0"
     worker-farm "^1.5.2"
 
+uikit@^3.0.0-rc.17:
+  version "3.0.0-rc.17"
+  resolved "https://registry.yarnpkg.com/uikit/-/uikit-3.0.0-rc.17.tgz#831526186c3ad37d1d52b1013b276784388a2a76"
+
 union-value@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/union-value/-/union-value-1.0.0.tgz#5c71c34cb5bad5dcebe3ea0cd08207ba5aa1aea4"
