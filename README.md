@@ -1,15 +1,16 @@
-## Webpack 4 Vanilla Javascript Starter
+## Webpack 4 Vanilla Javascript Boilerplate
 
-- `npm install`
-- `npm start` - developing
-- `npm test` - runs tests
-- `npm run build` - bundling to prod
+- `yarn install`
+- `yarn start` - developing
+- `yarn test` - runs tests
+- `yarn lint` - eslint
+- `yarn lint:fix` - eslint --fix
+- `yarn run build` - bundling to prod
 - app runs on `http://localhost:8080`
 
 ### Includes:
 - Hot reloading
 - Dev / Prod separation builds
-- Some build optimalizations (work still in progress)
 - Sass
 - Source maps on
 - turned off side effects,
