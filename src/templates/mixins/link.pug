@@ -1,0 +1,9 @@
+mixin link(title, href, text)
+  - if (typeof(title) === 'undefined') title = 'Title of link'
+  - if (typeof(text) === 'undefined') text = title
+  - if (typeof(href) === 'undefined') href = '#'
+  a(href=href, title=title)&attributes(attributes)
+    if block
+      block
+    else
+      !=text
