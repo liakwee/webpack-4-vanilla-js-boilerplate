@@ -16,3 +16,4 @@
 - turned off side effects,
 - babel-loader
 - jpg / fonts bundling
+- Pug HTML templating
