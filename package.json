@@ -10,7 +10,7 @@
     "test": "jest",
     "debug": "NODE_ENV=debug npm test",
     "develop": "NODE_ENV=develop",
-    "start": "webpack-dev-server --config webpack.dev.js",
+    "start": "webpack-dev-server --config webpack.dev.js --open-page index.html",
     "build": "webpack --config webpack.prod.js",
     "lint": "yarn eslint .",
     "lint:fix": "yarn lint --fix"
