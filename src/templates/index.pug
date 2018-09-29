@@ -13,7 +13,16 @@ block content
 
     h2 Cards
     span.uk-margin-small-right(uk-icon='check')
+    h3 Inline SVG
+    +svgicon('calendar')
+    +svgicon('book-test-drive')
+    +svgicon('cross')
 
+    h3 SVG background
+    span.icon.icon-test1
+    span.icon.icon-test2
+
+    img(src='#calendar', alt='')
 
     .uk-grid-match(class='uk-child-width-1-2@s', uk-grid)
       each card in base.cards

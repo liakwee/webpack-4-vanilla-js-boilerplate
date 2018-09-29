@@ -1,0 +1,6 @@
+mixin svgicon(id)
+  - if (typeof(id) !== 'undefined') id = '#' + id
+  svg.icon(width='1em', height='1em')
+    use(xlink:href=id)
+
+

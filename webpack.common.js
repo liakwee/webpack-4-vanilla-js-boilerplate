@@ -3,6 +3,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const webpack = require('webpack');
 const devMode = process.env.NODE_ENV !== 'production';
 const pugTemplates = [];
@@ -20,6 +21,26 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.svg$/,
+        include: /src\/icons\/.+\.svg$/,
+        use: [
+          {
+            loader: 'svg-sprite-loader'
+          },
+          {
+            loader: 'svgo-loader',
+            options: {
+              plugins: [
+                { removeTitle: true },
+                { removeMetadata: true },
+                { removeDesc: true },
+                { removeUselessDefs: true }
+              ]
+            }
+          }
+        ]
+      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -39,6 +60,7 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/,
+        exclude: /src\/icons\/.+\.svg$/,
         use: ['file-loader']
       },
       {
@@ -67,6 +89,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new SpriteLoaderPlugin(),
     ...pugTemplates.map(
       templateName =>
         new HtmlWebpackPlugin({
