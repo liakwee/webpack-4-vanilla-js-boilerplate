@@ -7,8 +7,9 @@ const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const webpack = require('webpack');
 const devMode = process.env.NODE_ENV !== 'production';
 const pugTemplates = [];
-const srcll = fs.readdirSync(path.resolve(__dirname, './src/templates'));
+const srcll = fs.readdirSync(path.resolve(__dirname, './src/templates/views'));
 srcll.forEach(s => s.endsWith('.pug') && pugTemplates.push(s));
+console.log('srcll: ', srcll);
 
 module.exports = {
   entry: {
@@ -95,15 +96,22 @@ module.exports = {
       templateName =>
         new HtmlWebpackPlugin({
           inject: true,
-          template: `./src/templates/${templateName}`,
+          template: `./src/templates/views/${templateName}`,
           filename: path.join(
-            path.resolve(__dirname, 'dist'),
+            path.resolve(__dirname, 'dist/pages'),
             templateName.replace('.pug', '.html')
           ),
           minify: false,
           alwaysWriteToDisk: true
         })
     ),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: `./src/templates/index.pug`,
+      filename: path.resolve(__dirname, 'dist/index.html'),
+      minify: false,
+      alwaysWriteToDisk: true
+    }),
     // In general it's good practice to clean the /dist folder before each build,
     // so that only used files will be generated
     new CleanWebpackPlugin(['dist']),

@@ -1,14 +1,14 @@
-extends layouts/default
+extends layouts/listing
 block vars
   - title = "Template Listing"
-  - bodyClass = 'hello-world'
 
 block content
   .uk-container
+    h1 Templates Listing
     ol
       each item in templatelist
         if item.indexOf('index') < 0
           li
             - var filename = item.substr(0, (item.length - 4)) + '.html'
-            +link(item, './'+filename, '') #{filename}
+            +link(item, './pages/'+filename, '')(target="_blank") #{filename}
 
