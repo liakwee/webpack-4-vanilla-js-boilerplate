@@ -1,0 +1,23 @@
+@mixin clearfix {
+  &::after {
+      clear: both;
+      content: ' ';
+      display: table;
+  }
+}
+
+
+// Mixin for font-face
+@mixin font-face($name, $file, $weight: normal, $style: normal){
+  @font-face {
+    font-family: "#{$name}";
+    src: url("#{$file}.eot");
+    src: url("#{$file}.eot?#iefix") format("embedded-opentype"),
+      // url("#{$file}.woff2") format("woff2"),
+      url("#{$file}.woff") format("woff"),
+      url("#{$file}.ttf") format("truetype"),
+      url("#{$file}.svg?#webfont") format("svg");
+    font-weight: $weight;
+    font-style: $style;
+  }
+}

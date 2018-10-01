@@ -1,0 +1,15 @@
+$container-width: 1440px;
+
+// Overwritting UIKit settings
+$global-gutter: 20px;
+$container-max-width: $container-width;
+$container-xsmall-max-width: 750px !default;
+$container-small-max-width: 900px !default;
+$container-large-max-width: $container-max-width;
+
+// Colours
+$primary-color: #ffff00;
+$secondary-color: #ff00ff;
+
+// Font Family
+$font-family: "Roboto", Tahoma, sans-serif;

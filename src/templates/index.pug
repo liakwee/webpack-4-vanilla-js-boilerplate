@@ -37,3 +37,60 @@ block content
 
     - var msg = "not my inside voice";
     p This is #{msg.toUpperCase()}
+
+    .uk-text-center(class='uk-child-width-expand@s ', uk-grid='')
+      div
+        .uk-card.uk-card-default.uk-card-body Item
+      div
+        .uk-card.uk-card-default.uk-card-body Item
+      div
+        .uk-card.uk-card-default.uk-card-body Item
+
+
+    .uk-grid-small.uk-text-center(class='uk-child-width-expand@s', uk-grid='')
+      div
+        .uk-card.uk-card-default.uk-card-body Item
+      div
+        .uk-card.uk-card-default.uk-card-body Item
+      div
+        .uk-card.uk-card-default.uk-card-body Item
+
+
+    .uk-grid-small.uk-flex-center.uk-text-center(class='uk-child-width-1-4@s', uk-grid='')
+      div
+        .uk-card.uk-card-default.uk-card-body Item 1
+      .uk-flex-last
+        .uk-card.uk-card-secondary.uk-card-body Item 2
+      div
+        .uk-card.uk-card-default.uk-card-body Item 3
+      div
+        .uk-card.uk-card-default.uk-card-body Item 4
+      .uk-flex-first
+        .uk-card.uk-card-primary.uk-card-body Item 5
+      div
+        .uk-card.uk-card-default.uk-card-body Item 6
+
+
+    .uk-text-center(uk-grid='')
+      .uk-width-1-3
+        .uk-card.uk-card-default
+          img(data-src='https://picsum.photos/300/200/?random', width='300', height='200', alt='', uk-img='')
+      .uk-width-1-3
+        .uk-card.uk-card-default
+          img(data-src='https://picsum.photos/300/200/?random', width='300', height='200', alt='', uk-img='')
+      .uk-width-1-3
+        .uk-card.uk-card-default
+          img(data-src='https://picsum.photos/300/200/?random', width='300', height='200', alt='', uk-img='')
+    .uk-text-center(uk-grid='')
+      .uk-width-1-2
+        .uk-card.uk-card-default.uk-card-body 1-2
+      .uk-width-1-2
+        .uk-card.uk-card-default.uk-card-body 1-2
+    .uk-text-center(uk-grid='')
+      .uk-width-1-4
+        .uk-card.uk-card-default.uk-card-body 1-4
+      .uk-width-3-4
+        .uk-card.uk-card-default.uk-card-body 3-4
+
+    img(data-src='https://images.unsplash.com/photo-1522201949034-507737bce479?fit=crop&w=650&h=433&q=80', data-srcset='https://images.unsplash.com/photo-1522201949034-507737bce479?fit=crop&w=650&h=433&q=80 650w,\
+    https://images.unsplash.com/photo-1522201949034-507737bce479?fit=crop&w=1300&h=866&q=80 1300w', sizes='(min-width: 650px) 650px, 100vw', width='650', height='433', alt='', uk-img='')

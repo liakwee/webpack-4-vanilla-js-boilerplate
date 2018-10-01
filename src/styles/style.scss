@@ -1,17 +1,32 @@
-// @import "uikit/src/scss/variables.scss";
-// @import "uikit/src/scss/mixins.scss";
-// @import "uikit/src/scss/uikit.scss";
+// Utils
+@import "utils/variables";
+@import "utils/mixins";
+@import "utils/functions";
+@import "utils/helpers";
 
-@import "uikit/src/scss/variables-theme.scss";
-@import "uikit/src/scss/mixins-theme.scss";
-@import "uikit/src/scss/uikit-theme.scss";
+// Base
+@import "base/core";
+@import "base/typography";
 
-.icon {
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-}
+// components
+// @import "components/accordion";
 
-.icon-test1 {
-  background: url("#calendar") no-repeat;
-}
+// layout
+// @import "layout/accordion";
+
+// pages
+@import "pages/homepage";
+
+// themes
+// @import "themes/accordion";
+
+// vendors
+// @import "vendors/accordion";
+
+
+@import "uikit/src/scss/variables.scss";
+@import "uikit/src/scss/mixins.scss";
+@import "uikit/src/scss/uikit.scss";
+// @import "uikit/src/scss/variables-theme.scss";
+// @import "uikit/src/scss/mixins-theme.scss";
+// @import "uikit/src/scss/uikit-theme.scss";
