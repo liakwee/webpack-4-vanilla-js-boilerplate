@@ -80,7 +80,8 @@ module.exports = {
               compileDebug: false,
               cache: true,
               data: {
-                require: require
+                require: require,
+                templatelist: pugTemplates
               }
             }
           }
