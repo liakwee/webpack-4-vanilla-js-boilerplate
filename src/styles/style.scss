@@ -1,3 +1,5 @@
+@import '~modularscale-sass/stylesheets/modularscale';
+
 // Utils
 @import "utils/variables";
 @import "utils/mixins";
@@ -23,7 +25,7 @@
 // vendors
 // @import "vendors/accordion";
 
-
+// UIKit Import
 @import "uikit/src/scss/variables.scss";
 @import "uikit/src/scss/mixins.scss";
 @import "uikit/src/scss/uikit.scss";

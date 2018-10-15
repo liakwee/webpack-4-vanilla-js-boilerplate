@@ -1,6 +1,6 @@
 import 'babel-polyfill';
 import UIkit from 'uikit';
-import _ from 'lodash';
+// import _ from 'lodash';
 import Icons from 'uikit/dist/js/uikit-icons';
 import printMe from './modules/print.js';
 // import symbolData from '../icons/calendar.svg';

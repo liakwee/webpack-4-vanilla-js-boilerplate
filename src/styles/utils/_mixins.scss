@@ -21,3 +21,9 @@
     font-style: $style;
   }
 }
+
+// Mixin that will include the fall back px declaration as well as the calculated rem value.
+@mixin fontSize($size) {
+  font-size: $size;
+  font-size: rem($size);
+}
