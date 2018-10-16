@@ -109,9 +109,6 @@ module.exports = {
           alwaysWriteToDisk: true
         })
     ),
-    new webpack.ProvidePlugin({
-      $: 'zepto-webpack'
-    }),
     new HtmlWebpackPlugin({
       inject: true,
       template: `./src/templates/index.pug`,

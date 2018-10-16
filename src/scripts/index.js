@@ -12,6 +12,8 @@ import '../styles/style.scss';
 const files = require.context('../icons/', false, /.*\.svg$/);
 files.keys().forEach(files);
 
+// UIkit.use(Icons);
+
 const autoInitComponents = () => {
   $('[data-component]')
     .toArray()

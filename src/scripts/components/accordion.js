@@ -1,7 +1,6 @@
 import UIkit from 'uikit';
+import Icons from 'uikit/dist/js/uikit-icons';
 import Component from '../helper/Component.js';
-// import { Accordion as accordion } from 'uikit/src/core/accordion.js';
-
 export default class Accordion extends Component {
   constructor(props) {
     super(props);
@@ -10,6 +9,7 @@ export default class Accordion extends Component {
   init() {
     console.log('Accordion init');
     const { elem } = this.state;
+    UIkit.use(Icons);
     UIkit.accordion(elem, {
       active: true
     });
