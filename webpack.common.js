@@ -105,6 +105,9 @@ module.exports = {
           alwaysWriteToDisk: true
         })
     ),
+    new webpack.ProvidePlugin({
+      $: 'zepto-webpack'
+    }),
     new HtmlWebpackPlugin({
       inject: true,
       template: `./src/templates/index.pug`,
@@ -127,7 +130,8 @@ module.exports = {
   ],
   output: {
     filename: devMode ? '[name].js' : '[name].[hash].js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/'
   },
   optimization: {
     // prevent to duplicate dependencies
