@@ -14,7 +14,6 @@ console.log('srcll: ', srcll);
 module.exports = {
   entry: {
     app: './src/scripts/index.js'
-    // another: './src/scripts/modules/another-module.js' // this is how you add extra modules
   },
   resolve: {
     extensions: ['.js', '.jsx', '.scss'],
@@ -91,6 +90,11 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jquery: 'jQuery',
+      'windows.jQuery': 'jquery'
+    }),
     new SpriteLoaderPlugin(),
     ...pugTemplates.map(
       templateName =>
