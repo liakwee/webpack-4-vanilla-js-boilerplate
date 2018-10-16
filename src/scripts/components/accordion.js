@@ -4,12 +4,14 @@ import Component from '../helper/Component.js';
 
 export default class Accordion extends Component {
   constructor(props) {
-    super(props); // calling super() so that the correct prototype chain is established.
-    console.log('props: ', props);
+    super(props);
   }
 
   init() {
+    console.log('Accordion init');
     const { elem } = this.state;
-    console.log('Accordion init', elem.find('li').length);
+    UIkit.accordion(elem, {
+      active: true
+    });
   }
 }

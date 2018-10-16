@@ -1,5 +1,5 @@
 mixin accordion(data)
-  ul.com-accordion.test(uk-accordion)(data-component='accordion')
+  ul.com-accordion(data-component='accordion')
     each item in data
       li
         - if (typeof(item.title) === 'undefined') item.title = 'Title of link'

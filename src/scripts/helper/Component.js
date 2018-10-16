@@ -24,7 +24,9 @@ class Component {
       data: props.data || null
     };
 
-    window.addEventListener('load', () => this.init());
+    this.init();
+
+    // window.addEventListener('load', () => this.init());
 
     window.onresize = this.onResize.bind(this);
     window.onscroll = this.onScroll.bind(this);
