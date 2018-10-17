@@ -62,12 +62,6 @@ module.exports = {
         test: /\.(png|jpg|jpeg|gif)$/,
         include: /src\/images/,
         exclude: /src\/icons\/.+\.svg$/,
-        /* use: {
-          loader: 'file-loader',
-          options: {
-            name: './images/[name].[ext]'
-          }
-        } */
         use: [
           'file-loader?name=./images/[name].[ext]',
           {
