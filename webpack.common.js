@@ -26,7 +26,12 @@ module.exports = {
         include: /src\/icons\/.+\.svg$/,
         use: [
           {
-            loader: 'svg-sprite-loader'
+            loader: 'svg-sprite-loader',
+            options: {
+              extract: true,
+              spriteFilename: 'sprite.svg',
+              publicPath: '/icons/'
+            }
           },
           {
             loader: 'svgo-loader',

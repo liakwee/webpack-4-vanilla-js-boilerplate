@@ -22,12 +22,10 @@ block content
     +svgicon('calendar')
     +svgicon('book-test-drive')
     +svgicon('cross')
-
-    h3 SVG background
-    span.icon.icon-test1
-    span.icon.icon-test2
-
-    img(src='#calendar', alt)
+    +svgicon('credits')
+    +svgicon('circle-tick')
+    +svgicon('arrow-left')
+    +svgicon('arrow-right')
 
     .uk-grid-match(class='uk-child-width-1-2@s', uk-grid)
       each card in base.cards
@@ -115,5 +113,3 @@ block content
 
     img(data-src='https://images.unsplash.com/photo-1522201949034-507737bce479?fit=crop&w=650&h=433&q=80', data-srcset='https://images.unsplash.com/photo-1522201949034-507737bce479?fit=crop&w=650&h=433&q=80 650w,\
     https://images.unsplash.com/photo-1522201949034-507737bce479?fit=crop&w=1300&h=866&q=80 1300w', sizes='(min-width: 650px) 650px, 100vw', width='650', height='433', alt, uk-img)
-
-    div.test
