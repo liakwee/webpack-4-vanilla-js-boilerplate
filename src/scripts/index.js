@@ -1,3 +1,5 @@
+'use strict';
+
 import 'babel-polyfill';
 import $ from 'jquery';
 // import UIkit from 'uikit';

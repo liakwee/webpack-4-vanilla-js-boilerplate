@@ -17,7 +17,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.scss'],
-    modules: ['./src/scripts', './src/styles', './node_modules']
+    modules: ['./node_modules', './src']
   },
   module: {
     rules: [
@@ -59,18 +59,59 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/,
+        test: /\.(png|jpg|jpeg|gif)$/,
+        include: /src\/images/,
         exclude: /src\/icons\/.+\.svg$/,
-        use: ['file-loader']
+        /* use: {
+          loader: 'file-loader',
+          options: {
+            name: './images/[name].[ext]'
+          }
+        } */
+        use: [
+          'file-loader?name=./images/[name].[ext]',
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              query: {
+                gifsicle: {
+                  interlaced: true
+                },
+                mozjpeg: {
+                  progressive: true
+                },
+                optipng: {
+                  optimizationLevel: 7
+                },
+                pngquant: {
+                  quality: '65-90',
+                  speed: 4
+                }
+              }
+            }
+          }
+        ]
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: ['file-loader']
+        test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
+        exclude: /src\/icons\/.+\.svg$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: 'fonts/[name].[ext]'
+          }
+        }
       },
       {
         test: /\.pug$/,
         use: [
-          { loader: 'raw-loader' },
+          {
+            loader: 'html-loader',
+            options: {
+              interpolate: true,
+              attrs: 'img:src xlink:href source:src image:xlink:href'
+            }
+          },
           {
             loader: 'pug-html-loader',
             options: {
