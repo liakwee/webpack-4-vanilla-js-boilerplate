@@ -35,21 +35,20 @@ export default class Header extends Component {
 
   onScroll() {
     this.elTop =
-      parseInt(
-        window.getComputedStyle(this.state.elem).getPropertyValue('top')
-      ) + this.state.wScrollDiff;
+      parseInt(window.getComputedStyle(this.state.elem).getPropertyValue('top')) +
+      this.state.wScrollDiff;
     window.requestAnimationFrame(this.scrollLoop.bind(this));
   }
 
   scrollLoop() {
     const {
       elem,
-        wScrollDiff,
-        dHeight,
-        elHeight,
-        wHeight,
-        wScrollBefore,
-        wScrollCurrent
+      wScrollDiff,
+      dHeight,
+      elHeight,
+      wHeight,
+      wScrollBefore,
+      wScrollCurrent
     } = this.state;
 
     this.setState({
@@ -65,17 +64,13 @@ export default class Header extends Component {
     } else if (wScrollDiff > 0) {
       elem.style.top = (this.elTop > 0 ? 0 : this.elTop) + 'px';
     } else if (wScrollDiff < 0) {
-      {
-        if (wScrollCurrent + wHeight >= dHeight - elHeight)
-          // scrolled to the very bottom; element slides in
-          elem.style.top =
-            ((this.elTop = wScrollCurrent + wHeight - dHeight) < 0
-              ? this.elTop
-              : 0) + 'px';
+      if (wScrollCurrent + wHeight >= dHeight - elHeight) {
+        // scrolled to the very bottom; element slides in
+        elem.style.top =
+          ((this.elTop = wScrollCurrent + wHeight - dHeight) < 0 ? this.elTop : 0) + 'px';
+      } else {
         // scrolled down; element slides out
-        else
-          elem.style.top =
-            (Math.abs(this.elTop) > elHeight ? -elHeight : this.elTop) + 'px';
+        elem.style.top = (Math.abs(this.elTop) > elHeight ? -elHeight : this.elTop) + 'px';
       }
     }
 

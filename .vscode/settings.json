@@ -1,0 +1,17 @@
+{
+  "[javascript]": {
+    "editor.formatOnSave": false // turn off prettier on js and scss file
+  },
+  "[scss]": {
+    "editor.formatOnSave": false
+  },
+  "files.associations": {
+    "*.js": "javascript"
+  },
+  "prettier.disableLanguages": ["js"], // disable prettier when it comes to javascript
+  "editor.formatOnSave": true,
+  "files.autoSave": "onFocusChange",
+  "eslint.autoFixOnSave": true,
+  "eslint.alwaysShowStatus": true,
+  "stylelint.enable": true
+}

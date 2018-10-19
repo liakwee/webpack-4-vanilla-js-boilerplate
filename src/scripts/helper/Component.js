@@ -3,8 +3,9 @@ import merge from 'deepmerge';
 
 class Component {
   constructor(props) {
-    if (!props.elem)
+    if (!props.elem) {
       throw 'Component: You did not provide an element to make into a component.';
+    }
 
     this.state = {
       elem: props.elem,

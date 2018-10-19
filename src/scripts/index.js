@@ -23,8 +23,7 @@ const autoInitComponents = () => {
       const componentName = $(elm).data('component');
       import(`./components/${componentName}.js`).then(component => {
         const Component = component.default;
-        const comp = new Component({ elem: elm });
-        // comp.init();
+        new Component({ elem: elm });
       });
     });
 };
