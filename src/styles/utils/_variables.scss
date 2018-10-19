@@ -1,9 +1,7 @@
-
 $modularscale: (
-  base: 1em,
-  ratio: 1.5
+    base: 1em,
+    ratio: 1.5
 );
-
 
 $base-font-size: 16px;
 $container-width: 1440px;
@@ -31,8 +29,8 @@ $container-small-max-width: 900px !default;
 $container-large-max-width: $container-max-width;
 
 // Colours
-$primary-color: #ffff00;
-$secondary-color: #ff00ff;
+$primary-color: #eee;
+$secondary-color: #f0f;
 
 // Font Family
 $font-family: "Roboto", Tahoma, sans-serif;

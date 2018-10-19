@@ -3,7 +3,7 @@
 'use strict';
 
 module.exports = {
-  extends: ['eslint:recommended', 'prettier'],
+  extends: ['prettier'],
   parserOptions: {
     ecmaVersion: 2017,
     sourceType: 'module', // es6 import/export

@@ -40,6 +40,7 @@ module.exports = {
                 { removeTitle: true },
                 { removeMetadata: true },
                 { removeDesc: true },
+                { removeViewBox: true },
                 { removeUselessDefs: true }
               ]
             }

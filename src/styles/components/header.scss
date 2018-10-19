@@ -1,0 +1,12 @@
+.header {
+    padding: rem(20);
+    background-color: $primary-color;
+    width: 100%;
+    height: 5em;
+    text-align: center;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0.063em 0.25em rgba(37, 50, 55, 0.25);
+}

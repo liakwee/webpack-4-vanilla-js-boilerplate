@@ -1,4 +1,4 @@
-@import '~modularscale-sass/stylesheets/modularscale';
+@import "~modularscale-sass/stylesheets/modularscale";
 
 // Utils
 @import "utils/variables";
@@ -33,10 +33,4 @@
 // @import "uikit/src/scss/mixins-theme.scss";
 // @import "uikit/src/scss/uikit-theme.scss";
 
-// .icon-test1 {
-//   display: inline-block;
-//   width: 32px;
-//   height: 32px;
-//   background: url("/./icons/sprite.svg#calendar") no-repeat;
-//   // background: url("~images/stock.jpg") no-repeat;
-// }
+@import "components/header";

@@ -5,6 +5,7 @@ import Component from '../helper/Component.js';
 export default class Accordion extends Component {
   constructor(props) {
     super(props);
+    this.state = { ...props };
   }
 
   init() {

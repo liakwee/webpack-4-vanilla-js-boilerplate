@@ -1,18 +1,5 @@
-/**
- * A vanilla JS helper for creating state-based components
- * @param {String|Node} elem    The element to make into a component
- * @param {Object}      options The component options
- */
-
-/**
- * Create the Component object
- * @param {String|Node} elem    The element to make into a component
- * @param {Object}      options The component options
- */
 'use strict';
-
-document.componentRegistry = {};
-document.nextId = 0;
+import merge from 'deepmerge';
 
 class Component {
   constructor(props) {
@@ -24,26 +11,29 @@ class Component {
       data: props.data || null
     };
 
-    this.init();
+    this.init = this.init.bind(this);
+    this.onResize = this.onResize.bind(this);
+    this.onScroll = this.onScroll.bind(this);
 
-    // window.addEventListener('load', () => this.init());
-
-    window.onresize = this.onResize.bind(this);
-    window.onscroll = this.onScroll.bind(this);
+    window.addEventListener('load', () => this.init());
+    window.addEventListener('scroll', () => this.onScroll());
+    window.addEventListener('resize', () => this.onResize());
   }
 
   // Add the `setState()` method
   setState(props) {
     // Shallow merge new properties into state object
-    for (var key in props) {
+    for (const key in props) {
       if (props.hasOwnProperty(key)) {
-        this.state.data[key] = props[key];
+        this.state[key] = props[key];
       }
     }
   }
 
   // lifecycle methods
-  init() {}
+  init() {
+    console.log('Components Init');
+  }
 
   destroy() {}
 
