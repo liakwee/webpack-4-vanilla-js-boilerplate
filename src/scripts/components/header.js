@@ -6,9 +6,6 @@ export default class Header extends Component {
   constructor(props) {
     super(props);
     this.state = { ...props };
-
-    let elTop = 0,
-      isScroll = false;
   }
 
   init() {
@@ -23,24 +20,9 @@ export default class Header extends Component {
     };
     this.setState({ INITIAL_STATE });
     console.log('Header init', this.state);
-    window.requestAnimationFrame =
-      window.requestAnimationFrame ||
-      window.mozRequestAnimationFrame ||
-      window.webkitRequestAnimationFrame ||
-      window.msRequestAnimationFrame ||
-      function(f) {
-        return setTimeout(f, 1000 / 60);
-      }; // simulate calling code 60
   }
 
   onScroll() {
-    this.elTop =
-      parseInt(window.getComputedStyle(this.state.elem).getPropertyValue('top')) +
-      this.state.wScrollDiff;
-    window.requestAnimationFrame(this.scrollLoop.bind(this));
-  }
-
-  scrollLoop() {
     const {
       elem,
       wScrollDiff,
@@ -59,23 +41,22 @@ export default class Header extends Component {
       wScrollDiff: wScrollBefore - wScrollCurrent
     });
 
+    let elTop =
+      parseInt(window.getComputedStyle(this.state.elem).getPropertyValue('top')) +
+      this.state.wScrollDiff;
+
     if (wScrollCurrent <= 0) {
       elem.style.top = '0px';
     } else if (wScrollDiff > 0) {
-      elem.style.top = (this.elTop > 0 ? 0 : this.elTop) + 'px';
+      elem.style.top = (elTop > 0 ? 0 : elTop) + 'px';
     } else if (wScrollDiff < 0) {
       if (wScrollCurrent + wHeight >= dHeight - elHeight) {
         // scrolled to the very bottom; element slides in
-        elem.style.top =
-          ((this.elTop = wScrollCurrent + wHeight - dHeight) < 0 ? this.elTop : 0) + 'px';
+        elem.style.top = ((elTop = wScrollCurrent + wHeight - dHeight) < 0 ? elTop : 0) + 'px';
       } else {
         // scrolled down; element slides out
-        elem.style.top = (Math.abs(this.elTop) > elHeight ? -elHeight : this.elTop) + 'px';
+        elem.style.top = (Math.abs(elTop) > elHeight ? -elHeight : elTop) + 'px';
       }
-    }
-
-    if (this.elTop < -80 || this.elTop === 0) {
-      window.requestAnimationFrame(this.scrollLoop.bind(this));
     }
 
     this.setState({ wScrollBefore: wScrollCurrent });
