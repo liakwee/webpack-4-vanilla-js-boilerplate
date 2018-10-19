@@ -9,6 +9,7 @@ block content
       each item in templatelist
         if item.indexOf('index') < 0
           li
-            - var filename = item.substr(0, (item.length - 4)) + '.html'
-            +link(item, './pages/'+filename, '')(target="_blank") #{filename}
+            - var filename = item.replace(/\.[^/.]+$/, '')
+            +link(item, './pages/'+filename+'.html', '')(target="_blank") #{filename}
 
+    include ./components/svgicon-list

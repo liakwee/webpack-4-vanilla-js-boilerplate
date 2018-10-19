@@ -1,0 +1,8 @@
+ul(style='list-style: none; font-size: 18px; padding: 0; margin: 0;')
+  each icon in iconlist
+    li
+      - var filename = icon.replace(/\.[^/.]+$/, '')
+      +svgicon(filename)
+      span=filename
+
+

@@ -6,10 +6,13 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const webpack = require('webpack');
 const devMode = process.env.NODE_ENV !== 'production';
-const pugTemplates = [];
-const srcll = fs.readdirSync(path.resolve(__dirname, './src/templates/views'));
-srcll.forEach(s => s.endsWith('.pug') && pugTemplates.push(s));
-console.log('srcll: ', srcll);
+const pugTemplates = fs
+  .readdirSync(path.resolve(__dirname, './src/templates/views'))
+  .filter(list => list.endsWith('.pug') === true);
+const svgIconList = fs
+  .readdirSync(path.resolve(__dirname, './src/icons'))
+  .filter(list => list.endsWith('.svg') === true);
+console.log('pug/svg icon: ', pugTemplates, svgIconList);
 
 module.exports = {
   entry: {
@@ -122,7 +125,8 @@ module.exports = {
               cache: true,
               data: {
                 require: require,
-                templatelist: pugTemplates
+                templatelist: pugTemplates,
+                iconlist: svgIconList
               }
             }
           }
@@ -152,7 +156,7 @@ module.exports = {
     ),
     new HtmlWebpackPlugin({
       inject: true,
-      template: `./src/templates/index.pug`,
+      template: './src/templates/index.pug',
       filename: path.resolve(__dirname, 'dist/index.html'),
       minify: false,
       alwaysWriteToDisk: true

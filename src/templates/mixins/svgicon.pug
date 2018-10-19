@@ -1,5 +1,5 @@
 mixin svgicon(id)
-  - if (typeof(id) !== 'undefined') id = '../icons/sprite.svg#' + id
+  - if (typeof(id) !== 'undefined') id = '/icons/sprite.svg#' + id
   svg.icon(width='1em', height='1em')
     use(xlink:href=id)
 
