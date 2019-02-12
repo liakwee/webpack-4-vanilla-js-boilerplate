@@ -1,2 +1,3 @@
-- var base = require('./src/templates/data/base.json')
-- var test = require('./src/templates/data/test.json')
+- let fs = require('fs');
+- let base = JSON.parse(fs.readFileSync('./src/templates/data/base.json'));
+- let test = JSON.parse(fs.readFileSync('./src/templates/data/test.json'));

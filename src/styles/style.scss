@@ -1,4 +1,4 @@
-@import "~modularscale-sass/stylesheets/modularscale";
+@import "~normalize-scss/sass/normalize";
 
 // Utils
 @import "utils/variables";
@@ -10,12 +10,6 @@
 @import "base/core";
 @import "base/typography";
 
-// components
-// @import "components/accordion";
-
-// layout
-// @import "layout/accordion";
-
 // pages
 @import "pages/homepage";
 
@@ -26,9 +20,9 @@
 // @import "vendors/accordion";
 
 // UIKit Import
-@import "uikit/src/scss/variables.scss";
-@import "uikit/src/scss/mixins.scss";
-@import "uikit/src/scss/uikit.scss";
+// @import "uikit/src/scss/variables.scss";
+// @import "uikit/src/scss/mixins.scss";
+// @import "uikit/src/scss/uikit.scss";
 // @import "uikit/src/scss/variables-theme.scss";
 // @import "uikit/src/scss/mixins-theme.scss";
 // @import "uikit/src/scss/uikit-theme.scss";
