@@ -6,9 +6,11 @@ const plugins = require('./webpack.plugins');
 
 module.exports = {
   context: path.join(config.root, config.paths.src),
-  entry: {
-    app: path.join(config.root, config.paths.src, 'scripts/index.js')
-  },
+  entry: [
+    'core-js/modules/es6.promise',
+    'core-js/modules/es6.array.iterator',
+    path.join(config.root, config.paths.src, 'scripts/index.js')
+  ],
   resolve: {
     extensions: ['.js', '.jsx', '.scss'],
     modules: ['./node_modules', './src']
@@ -31,11 +33,5 @@ module.exports = {
   module: {
     rules: loaders
   },
-  plugins,
-  optimization: {
-    // prevent to duplicate dependencies
-    splitChunks: {
-      chunks: 'all'
-    }
-  }
+  plugins
 };

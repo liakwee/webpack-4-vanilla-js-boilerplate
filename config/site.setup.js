@@ -11,9 +11,7 @@ const skip_setup = process.env.SKIP_SETUP || false;
 async function runSetup() {
   clear();
   console.log(
-    chalk.red(
-      figlet.textSync('Static Site Boilerplate', { horizontalLayout: 'fitted' })
-    )
+    chalk.red(figlet.textSync('Static Site Boilerplate', { horizontalLayout: 'fitted' }))
   );
 
   const questions = await prompt([
@@ -40,12 +38,6 @@ async function runSetup() {
       name: 'google_analytics',
       message: 'What is your Google Analytics Tracking ID?',
       hint: 'UA-XXXXX-Y'
-    },
-    {
-      type: 'select',
-      name: 'jquery',
-      message: 'Would you like jQuery installed?',
-      choices: ['Yes', 'No'],
     }
   ]);
 
@@ -55,38 +47,24 @@ async function runSetup() {
       data = data.replace(/site_name: '.*?'/g, `site_name: '${questions.site_name}'`);
     }
     if (typeof questions.site_description !== 'undefined') {
-      data = data.replace(/site_description: '.*?'/g, `site_description: '${questions.site_description}'`);
+      data = data.replace(
+        /site_description: '.*?'/g,
+        `site_description: '${questions.site_description}'`
+      );
     }
     if (typeof questions.site_url !== 'undefined') {
       data = data.replace(/site_url: '.*?'/g, `site_url: '${questions.site_url}'`);
     }
     if (typeof questions.google_analytics !== 'undefined') {
-      data = data.replace(/googleAnalyticsUA: '.*?'/g, `googleAnalyticsUA: '${questions.google_analytics}'`);
+      data = data.replace(
+        /googleAnalyticsUA: '.*?'/g,
+        `googleAnalyticsUA: '${questions.google_analytics}'`
+      );
     }
 
-    fs.writeFile('./config/site.config.js', data, 'utf8', (err) => { });
+    fs.writeFile('./config/site.config.js', data, 'utf8', err => {});
   });
-
-  // Add CSS reset to stylesheet
-  if (questions.cssreset !== 'None') {
-    const cssContent =
-      '// Load CSS Reset from NPM\n'
-      + '@import "~' + questions.cssreset + '"\n';
-
-    fs.writeFile('./../src/stylesheets/styles.scss', cssContent, (err) => {});
-  }
-
-  // Add jQuery to scripts
-  if (questions.jquery == 'Yes') {
-    const jsContent =
-      '// Load jQuery from NPM\n'
-      + 'import $ from \'jquery\';\n\n'
-      + 'window.jQuery = $;\n'
-      + 'window.$ = $;\n';
-
-    fs.writeFile('./../src/javascripts/scripts.js', jsContent, (err) => {});
-  }
-};
+}
 
 if (!skip_setup) {
   runSetup();

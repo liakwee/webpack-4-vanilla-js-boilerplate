@@ -74,18 +74,24 @@ const svg = {
 
 // Javascript loaders
 const js = {
-  test: /\.js(x)$/,
+  test: /\.js$/,
+  include: /src\/icons\/.+\.js$/,
   exclude: /node_modules/,
-  use: [
-    {
-      loader: 'babel-loader',
-      options: {
-        presets: ['@babel/preset-env']
-      }
-    },
-    'eslint-loader'
-  ]
+  use: {
+    loader: 'babel-loader'
+  }
 };
+
+// {
+//   test: /\.m?js$/,
+//   exclude: /node_modules/,
+//   use: {
+//     loader: 'babel-loader',
+//     options: {
+//       plugins: ['@babel/plugin-transform-runtime', '@babel/plugin-syntax-dynamic-import']
+//     }
+//   }
+// };
 
 // Style loaders
 const styleLoader = {
